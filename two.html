@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX | onReadStateChange</title>
+</head>
+
+<body>
+
+    <div>
+        <div class="w3-info">
+            <p>The keystone of AJAX is the XMLHttpRequest object.</p>
+            <ol>
+                <li>Create an XMLHttpRequest object</li>
+                <li>Define a callback function</li>
+                <li>Open the XMLHttpRequest object</li>
+                <li>Send a Request to a server</li>
+            </ol>
+        </div>
+    </div>
+    <div>
+        <h4>Basic Ajax </h4>
+        <button type="button" onclick="loadData()">Load Data</button>
+    </div>
+
+
+    <script>
+
+        function loadData() {
+            // Create an XMLHttpRequest object
+            const xhttp = new XMLHttpRequest();
+
+            // Define a callback function 
+            xhttp.onreadystatechange = function () {
+                console.log(xhttp.response);
+            };
+
+            // Send a request
+            xhttp.open('GET', 'https://jsonplaceholder.typicode.com/users');
+            xhttp.send();
+
+        }
+
+
+    </script>
+</body>
+
+</html>

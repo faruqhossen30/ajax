@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX | Onload</title>
+</head>
+<body>
+    
+    <div>
+        <h4>Basic Ajax </h4>
+        <button type="button" onclick="loadData()">Load Data</button>
+    </div>
+
+    <div id="responseData">
+
+    </div>
+
+    <script>
+        
+        function loadData(){
+            // Create an XMLHttpRequest object
+            const xhttp = new XMLHttpRequest();
+            
+
+            // Send a request
+            xhttp.open('GET', 'https://jsonplaceholder.typicode.com/posts/1');
+            xhttp.send();
+
+            // Define a callback function 
+            xhttp.onload = function(){
+                document.getElementById('responseData').innerHTML = xhttp.responseText;
+                console.log(xhttp.response);
+            };
+
+        }
+
+
+    </script>
+</body>
+</html>
